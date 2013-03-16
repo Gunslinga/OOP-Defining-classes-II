@@ -1,0 +1,32 @@
+using _3DPoint;
+using System;
+using System.Collections.Generic;
+
+namespace PointTest
+{
+    public class Test
+    {
+        static void Main(string[] args)
+        {
+            Point3D p = new Point3D() { X = 5, Y = 6, Z = 7 };
+            Point3D t = new Point3D() { X = 6, Y = 6, Z = 8 };
+
+            List<Point3D> points = new List<Point3D>();
+            points.Add(t);
+            points.Add(p);
+
+            Path path = new Path(points);
+
+            for (int i = 0; i < path.Points.Count; i++)
+            {
+                Console.WriteLine(path.Points[i]);
+            }
+            Console.WriteLine("{0} {1}", "Distance:", CalcDistance.CalculateDistance(p, t));
+            GenericList<int> someList = new GenericList<int>(10);
+
+            Matrix<double> arr1 = new Matrix<double>(5, 5);
+            Matrix<double> arr2 = new Matrix<double>(5, 5);
+            Matrix<double> arr3 = arr2 * arr1;
+        }
+    }
+}
